@@ -18,7 +18,7 @@ const VALIDATIONS = {
     canBeBlank: true,
   },
   "workspace.server.hardfork": {
-    allowedChars: /^(byzantium|constantinople|petersburg|istanbul|muirGlacier)$/,
+    allowedChars: /^(byzantium|constantinople|petersburg|istanbul|muirGlacier|pala)$/,
     canBeBlank: false,
   },
 };
@@ -121,10 +121,11 @@ class ChainScreen extends Component {
                 <option value="byzantium">Byzantium</option>
                 <option value="istanbul">Istanbul</option>
                 <option value="muirGlacier">Muir Glacier</option>
+                <option value="pala">PaLa</option>
               </StyledSelect>
             </div>
             <div className="RowItem">
-              <p>The hardfork to use. Default is Petersburg.</p>
+              <p>The hardfork to use. Default is PaLa.</p>
             </div>
           </div>
         </section>
