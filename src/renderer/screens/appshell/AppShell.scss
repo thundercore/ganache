@@ -1,0 +1,22 @@
+.AppShell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .ShellContainer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    overflow: hidden; // Scrolling is handled using react-custom-scrollbars
+    height: 100%;
+  }
+
+  .ShellContainer > span {
+    position: relative;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

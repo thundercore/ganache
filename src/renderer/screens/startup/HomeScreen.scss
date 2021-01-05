@@ -1,0 +1,313 @@
+.HomeScreenContainer {
+  background-color: var(--app-statusbar-background);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+
+  svg {
+    g,
+    path,
+    circle {
+      stroke: none !important;
+    }
+  }
+
+  .HomeScreen {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        position: relative;
+        height: 100px;
+        font-family: "Grand Hotel";
+        font-size: 4rem;
+        svg {
+          height: 100%;
+          vertical-align: middle;
+          margin-right: 1rem;
+        }
+        .version {
+          font-family: 'RobotoCondensed-Regular';
+          font-size: 1rem;
+          position: absolute;
+          right: .25rem;
+          bottom: 0;
+          opacity: .15;
+        }
+      }
+
+      .updates {
+        margin-right:.5rem;
+        text-transform: uppercase;
+        vertical-align: middle;
+        font-family: 'RobotoCondensed-Bold';
+        .Spinner {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 1rem 0 0;
+        }
+      }
+    }
+
+    .WorkspacesBody {
+      margin: auto 0;
+      text-align: center;
+
+      .WelcomeImage {
+        width: 20rem;
+        max-width: 35%;
+        margin-bottom: 1.3rem;
+      }
+
+      .title {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 2rem;
+
+        &.left {
+          text-align: left;
+        }
+      }
+
+      .subTitle {
+        color: #fff;
+        font-size: 1.3rem;
+        font-family: "Fira Code Regular";
+        margin-top: 0.8rem;
+      }
+
+      section {
+        margin-top: 1.3rem;
+        color: var(--app-navbar-text);
+        & > * {
+          max-width: 37rem;
+          margin: auto;
+        }
+
+        .top {
+          background-color: #fbf1ec;
+          border-radius: .3rem;
+
+          .scrollBar {
+            height: 22rem !important;
+            @media only screen and (max-height: 56.25rem) {
+              height: 20rem !important;
+            }
+            @media only screen and (max-height: 50rem) {
+              height: 15rem !important;
+            }
+
+            ul {
+              margin: 0 0 1.5rem 0;
+              list-style: none;
+              padding: 1rem;
+    
+              button {
+                background-color: transparent;
+                margin-bottom: 1rem;
+                display: block;
+                border-radius: .3rem;
+                padding: 1.25rem calc(1.5rem + 26px) 1.25rem 1.2rem;
+                color: var(--app-button-primary-background-color);
+                position: relative;
+                height: auto;
+                line-height: initial;
+                width: 100%;
+                text-align: left;
+                text-transform: none;
+                font-size: 1.35rem;
+                font-family: "Fira Sans";
+                font-weight: normal;
+    
+                & > * {
+                  display: inline-block;
+                }
+    
+                &:last-child {
+                  margin-bottom: 0;
+                }
+    
+                .EditSettings, .DeleteWorkspace {
+                  opacity: 0;
+                  width: 1.3rem;
+                  vertical-align: middle;
+                  transition: all .3s;
+                  position: absolute;
+                  right: 1rem;
+                }
+                
+                .EditSettings{
+                  right: 4rem;
+                  svg {
+                    fill: var(--app-button-primary-color);
+                  }
+                }
+                &:hover, &:focus, &:active {
+                  color: #fbf1ec;
+                  background: #5f474e;
+    
+                  .EditSettings, .DeleteWorkspace {
+                    opacity: 1;
+    
+                    &:hover, &:focus {
+                      color: var(--app-statusbar-background);
+                      filter: brightness(120%);
+                    }
+                  }
+                }
+              }
+    
+              p {
+                font-family: "Fira Code Regular";
+                font-weight: bold;
+                margin: 0;
+                height: 9rem;
+                min-width: 325px;
+              }
+            }
+          }
+        }
+
+        .bottom {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          span {
+            flex-grow: 0.075;
+            flex-basis: 0;
+          }
+
+          > div {
+            flex-grow: 1;
+            flex-basis: 0;
+            max-width: 20rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+            display: flex;
+            text-align: center;
+
+            &:first-child > button {
+              margin-right: 0.5rem;
+            }
+            &:last-child > button {
+              margin-left: 0.5rem;
+            }
+            > button {
+              display: flex;
+              align-items: center;
+              flex: 1;
+              font-family: "Fira Sans SemiBold";
+              background: var(--app-button-primary-color);
+              height: auto;
+              padding: 1.3rem 1.75rem;
+              font-size: 1.4em;
+              border-radius: .4rem;
+              color: var(--app-statusbar-background);
+
+              &:hover, &:focus, &:active {
+                color: var(--app-statusbar-background);
+                filter: brightness(120%);
+              }
+
+              svg {
+                vertical-align: top;
+                height: 28px;
+                margin-right: .75rem;
+                fill:  var(--app-statusbar-background);
+              }
+
+              > div {
+                display: inline-block;
+                white-space: nowrap;
+                
+                text-align: right;
+                margin-right: 15px;
+                display: flex;
+                flex-direction: column;
+                min-width:140px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .LearnMore {
+      p {
+        color: #fff;
+        font-size: 1.3rem;
+        font-family: "Fira Code Regular";
+        margin-top: 0.8rem;
+        text-align: center;
+
+        a {
+          color: var(--app-button-primary-color);
+        }
+      }
+    }
+
+    .flavor-label {
+      font-size:.7em;
+      line-height: .6em;
+      text-align: right;
+      font-style: italic;
+      margin-right:.2rem;
+      opacity: .85;
+    }
+    .flavor-buttons {
+      position: relative;
+    }
+    .homescreen-flavor-toggle-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding:0 3px !important;
+      height: 100% !important;
+      width:auto !important;
+      overflow: hidden;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      border-left: solid 1px rgba(0,0,0,.1);
+      text-align:center;;
+      &:focus, &:active {
+        filter: brightness(100%) !important;
+      }
+    }
+    .flavor-buttons:last-child .homescreen-flavor-buttons {
+      transform: translateY(100%) translateX(.5em);
+    }
+    .homescreen-flavor-selected{
+      filter: brightness(120%);
+    }
+    .homescreen-flavor-buttons {
+      position: absolute;
+      bottom: 4px;
+      transform: translateY(100%);
+      border-top:solid 1px rgba(0,0,0,.1);
+      width:calc(100% - .5em);
+      background: var(--app-button-primary-color);
+      border-radius: 0 0 .4rem .4rem;
+      filter: brightness(95%);
+      > button {
+        width: 100%;
+        border-radius:0;
+        &:last-child {
+          border-radius: 0 0 .4rem .4rem;
+        }
+        &:hover {
+          color: var(--app-statusbar-background);
+          filter: brightness(120%);
+        }
+        border-bottom:solid 1px rgba(0,0,0,.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "name": "ganache",
+  "productName": "Ganache",
+  "version": "2.5.4",
+  "description": "Personal Blockchain for Ethereum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trufflesuite/ganache.git"
+  },
+  "author": {
+    "name": "Truffle",
+    "email": "inquiry@trufflesuite.com",
+    "url": "https://github.com/trufflesuite"
+  },
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/trufflesuite/ganache/issues"
+  },
+  "keywords": [
+    "ganache",
+    "ethereum",
+    "blockchain",
+    "truffle"
+  ],
+  "homepage": "https://github.com/trufflesuite/ganache#readme",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "start": "npm run dev",
+    "compile": "electron-webpack",
+    "lint": "eslint .",
+    "sign-mac": "codesign --deep --force --verbose --sign 'Developer ID Application: Timothy Coulter (58RKXWC272)' ./dist/*.dmg",
+    "build-linux": "npm run compile && electron-builder --linux",
+    "build-mac": "npm run compile && electron-builder --mac",
+    "build-windows": "npm run compile && electron-builder --win",
+    "test": "npm run test-mocha && npm run test-jest",
+    "test-jest": "jest __tests__/.*.test.js",
+    "test-mocha": "cross-env GANACHE_DEV_MODE=true ELECTRON_APP_PATH=./ mocha --require @babel/register --check-leaks 'test/mocha/**/*.test.js'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "postinstall": "cd static/node && npm ci --only=prod"
+  },
+  "dependencies": {
+    "@exponent/electron-cookies": "^2.0.0",
+    "@ganache/react-json-view": "^1.20.2",
+    "atob": "2.1.2",
+    "bs58": "4.0.1",
+    "btoa": "1.2.1",
+    "connected-react-router": "6.6.1",
+    "electron-log": "^3.0.7",
+    "ethagen": "0.1.2",
+    "ethereumjs-units": "^0.2.0",
+    "filesize": "^3.6.1",
+    "fix-path": "^2.1.0",
+    "follow-redirects": "1.9.0",
+    "fs-extra": "9.0.0",
+    "get-port": "^5.0.0",
+    "history": "4.10.1",
+    "lodash.assign": "4.2.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.merge": "^4.6.2",
+    "lodash.omit": "^4.5.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "moniker": "^0.1.2",
+    "node-fetch": "2.6.0",
+    "node-localstorage": "^2.1.6",
+    "node-ssh": "7.0.0",
+    "pg": "7.14.0",
+    "pluralize": "^5.0.0",
+    "promisify-child-process": "^3.1.3",
+    "react": "16.5.2",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "16.5.2",
+    "react-graph-vis": "1.0.5",
+    "react-hot-loader": "4.3.12",
+    "react-md-spinner": "^1.0.0",
+    "react-moment": "^0.2.2",
+    "react-redux": "6.0.1",
+    "react-render-html": "^0.6.0",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2",
+    "react-syntax-highlighter": "11.0.2",
+    "react-virtualized": "^9.21.0",
+    "redux": "4.0.4",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.3.0",
+    "safe-buffer": "^5.0.1",
+    "semver-parser": "3.0.4",
+    "shebang-loader": "^0.0.1",
+    "source-map-support": "^0.5.13",
+    "truffle": "5.1.20",
+    "universal-analytics": "^0.4.13",
+    "unzip-stream": "0.3.0",
+    "web3": "1.2.6",
+    "web3-providers-http": "1.2.6",
+    "web3-providers-ws": "1.2.6",
+    "xterm": "^4.4.0",
+    "xterm-addon-fit": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "10.0.3",
+    "cache-loader": "4.1.0",
+    "chokidar": "3.3.1",
+    "cross-env": "^6.0.0",
+    "electron": "8.2.1",
+    "electron-builder": "22.4.1",
+    "electron-notarize": "0.3.0",
+    "electron-updater": "4.2.0",
+    "electron-webpack": "^2.7.4",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.1.0",
+    "ganache-core": "2.13.1",
+    "html-loader": "1.0.0-alpha.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "js-scrypt": "^0.2.0",
+    "lint-staged": "^9.2.5",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.18.2",
+    "react-svg-loader": "^3.0.3",
+    "sass-loader": "^8.0.0",
+    "temp": "0.9.1",
+    "webpack": "4.41.4"
+  },
+  "electronWebpack": {
+    "main": {
+      "webpackConfig": "webpack/webpack.main.js"
+    },
+    "renderer": {
+      "webpackConfig": "webpack/webpack.renderer.js"
+    }
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ],
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "build": {
+    "npmRebuild": false,
+    "appId": "org.trufflesuite.ganache",
+    "afterSign": "./scripts/build/afterSignHook.js",
+    "afterPack": "./scripts/build/afterPack.js",
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "certificateSha1": "14E886EF4F6AA9CFC5752D8FA34FB142DA4DEF44",
+      "icon": "static/icons/win/icon.ico",
+      "verifyUpdateCodeSignature": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "appx",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "appx": {
+      "identityName": "GanacheUI",
+      "publisher": "CN=\"Truffle Blockchain Group, Inc\", O=\"Truffle Blockchain Group, Inc\", L=Yakima, S=Washington, C=US",
+      "publisherDisplayName": "Truffle",
+      "backgroundColor": "#34262A",
+      "artifactName": "Ganache-${version}-${os}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "artifactName": "Ganache-${version}-${os}-${arch}-setup.${ext}"
+    },
+    "mac": {
+      "icon": "static/icons/mac/icon.icns",
+      "hardenedRuntime": true,
+      "entitlements": "./build/dmg/entitlements.mac.inherit.plist",
+      "category": "public.app-category.developer-tools"
+    },
+    "dmg": {
+      "background": "build/dmg/background.tiff",
+      "contents": [
+        {
+          "x": 219,
+          "y": 358,
+          "type": "dir",
+          "name": "Ganache.app"
+        },
+        {
+          "x": 439,
+          "y": 358,
+          "type": "link",
+          "name": "Applications",
+          "path": "/Applications"
+        }
+      ],
+      "format": "ULFO",
+      "sign": true,
+      "artifactName": "Ganache-${version}-${os}.${ext}"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "static/icons/png/",
+      "category": "Development",
+      "executableName": "Ganache",
+      "artifactName": "ganache-${version}-${os}-${arch}.${ext}"
+    }
+  },
+  "engines": {
+    "node": "12.13.1"
+  }
+}

@@ -1,0 +1,8 @@
+certs/cert.pfx
+dist
+node_modules
+.DS_Store
+.vscode
+test/mocha/workspaces/test-workspaces/default/ContractCache
+test/mocha/workspaces/test-workspaces/workspaces/Test-1/ContractCache
+test/mocha/workspaces/test-workspaces/workspaces/Test-2/ContractCache
